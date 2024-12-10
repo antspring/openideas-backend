@@ -18,7 +18,6 @@ from django.conf import settings
 from django.urls import path, include
 from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
-from rest_framework.authtoken import views
 
 from forms.views import ContactFormViewSet
 from news.views import NewsViewSet
@@ -28,8 +27,7 @@ router.register('contact-forms', ContactFormViewSet)
 router.register('news', NewsViewSet)
 
 urlpatterns = [
-    path('api/', include(router.urls)),
-    path('api/token/', views.obtain_auth_token)
+    path('api/', include(router.urls))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
