@@ -10,4 +10,4 @@ COPY . .
  
 EXPOSE 8000
 
-CMD ["gunicorn", "openideas.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["sh", "-c", "python3 manage.py migrate && gunicorn openideas.wsgi:application --bind 0.0.0.0:8000"]
