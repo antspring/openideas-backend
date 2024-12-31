@@ -40,8 +40,14 @@ pip install requirements.txt
 python3 manage.py runserver
 ```
 
-### Launch migrations with/without Docker
+### Launch migrations without Docker
 
 ```bash
 python3 manage.py migrate
+```
+
+### Create superuser
+
+```bash
+python3 manage.py createsuperuser
 ```
